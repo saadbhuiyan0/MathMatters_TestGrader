@@ -15,6 +15,8 @@ print("Students' answers populated.")
 
 
 grades = {}
+total_questions_correct = []
+total_questions_incorrect = []
 
 scale = {1:14,2:30,3:39,4:54,5:68,6:79,7:90,8:100,9:111,10:118,11:126,12:135,13:141,14:147,15:153,16:158,17:163,18:169,19:173,20:178,21:183,22:187,23:191,24:194,25:197,26:201,27:204,28:208,29:212,30:215,31:219,32:222,33:226,34:229,35:232,36:236,37:240,38:243,39:247,40:250,41:254,42:257,43:261,44:265,45:269,46:274,47:278,48:283,49:290,50:298,51:305,52:314,53:323,54:333,55:342,56:352,57:360}
 
@@ -40,9 +42,11 @@ def grade():
                 else:
                     math_correct_answers += 1
                 correct_questions.append(answer + 1)
+                total_questions_correct.append(answer + 1)
                 # print("correct")
             else: 
                 incorrect_questions.append(answer + 1)
+                total_questions_incorrect.append(answer + 1)
         data.update({"correct answers":correct_answers})
         data.update({"questions answered correct":correct_questions})
         data.update({"questions answered incorrect":incorrect_questions})
@@ -54,6 +58,12 @@ def grade():
         grades.update({student[0]:data})
     print("Grading complete.")
     return grades
+
+def all_correct_questions():
+    return total_questions_correct
+
+def all_incorrect_questions():
+    return total_questions_incorrect
 
 # print(grades)
 # pprint.pprint(grades)
