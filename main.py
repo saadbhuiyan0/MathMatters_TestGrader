@@ -16,7 +16,7 @@ def main():
                 ] 
             ]
         }
-        sheets_functions.write_data(sheet_name, "A" + str(row), data)
+        sheets_functions.write_data(sheet_name, "B" + str(row), data)
         print(student + " grades added to sheet.")
         time.sleep(1)
         row += 1
@@ -32,7 +32,7 @@ def main():
                 ] 
             ]
         }
-        sheets_functions.write_data(sheet_name, "F" + str(row), data)
+        sheets_functions.write_data(sheet_name, "G" + str(row), data)
         print("Data for " + str(question_number) + " added to sheet.")
         time.sleep(1)
         row += 1
